@@ -115,11 +115,6 @@ python eval/run_faithfulness_eval.py
 | English  | 90%           | 50%       | 90%       | 90%       |
 | French   | 90%           | 70%       | 90%       | 90%       |
 
----
-
-## 🧪 Research Paper
-
-See `paper.tex` for the submission-ready LaTeX paper.
 
 ---
 
