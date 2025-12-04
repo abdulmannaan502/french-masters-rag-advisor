@@ -44,7 +44,6 @@ The system is evaluated as a small research project with public code, data, and 
 
 ```
 french-masters-rag-advisor/
-├─ data/
 ├─ index/
 │  ├─ faiss_index.bin
 │  └─ metadata.jsonl
@@ -59,7 +58,6 @@ french-masters-rag-advisor/
 │  ├─ run_faithfulness_eval.py
 │  └─ results_*.jsonl
 ├─ requirements.txt
-├─ Dockerfile
 └─ paper.tex
 ```
 
