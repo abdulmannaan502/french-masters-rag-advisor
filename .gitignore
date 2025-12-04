@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Large model / cache folders
+models/
+*.gguf
+*.safetensors
+.cache/
+huggingface/
+
+# Streamlit / temp
+*.log

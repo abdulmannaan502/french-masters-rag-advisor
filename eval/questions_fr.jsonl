@@ -1,0 +1,10 @@
+{"id": 1, "question": "Quelle est la procédure Etudes en France pour demander un visa étudiant ?", "gold_source": "campusfrance_etudes_en_france_guide"}
+{"id": 2, "question": "Qui est responsable de l’examen des dossiers dans la procédure Campus France ?", "gold_source": "campusfrance_etudes_en_france_guide"}
+{"id": 3, "question": "Quels documents sont requis pour déposer une candidature en master via Campus France ?", "gold_source": "campusfrance_masters_admission_user_guide"}
+{"id": 4, "question": "Quelles sont les étapes pour candidater au master Grenoble AI4OneHealth ?", "gold_source": "grenoble_ai4onehealth_guide"}
+{"id": 5, "question": "Quels parcours de spécialisation sont proposés dans le master Grenoble AI4OneHealth ?", "gold_source": "grenoble_ai4onehealth_guide"}
+{"id": 6, "question": "Quelle est la date limite de candidature pour le master d’Intelligence Artificielle de Paris-Saclay ?", "gold_source": "paris_saclay_master_ai_catalogue"}
+{"id": 7, "question": "Quels sont les principaux cours inclus dans le master d’Intelligence Artificielle de Paris-Saclay ?", "gold_source": "paris_saclay_master_ai_catalogue"}
+{"id": 8, "question": "Quels diplômes ou certifications sont délivrés par le programme MSc Data Science de HEC ?", "gold_source": "x_hec_msc_data_science_for_business"}
+{"id": 9, "question": "Le programme MSc Data Science de HEC est-il enseigné en anglais ?", "gold_source": "x_hec_msc_data_science_for_business"}
+{"id": 10, "question": "Quels sont les principaux cours du parcours Strategic Management à HEC ?", "gold_source": "x_hec_msc_data_science_for_business"}

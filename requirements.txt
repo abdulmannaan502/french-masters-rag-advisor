@@ -1,0 +1,11 @@
+langchain
+sentence-transformers
+faiss-cpu
+pypdf
+python-dotenv
+streamlit
+tqdm
+pandas
+numpy
+requests
+huggingface_hub
