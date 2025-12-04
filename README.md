@@ -1,88 +1,136 @@
-# 🎓 AI Masters Advisor – France
+# Multilingual RAG Advisor for French Master's Admissions
 
-This Space hosts a **Retrieval-Augmented Generation (RAG) system** designed to answer student questions about applying to **Master’s programs in France**.
+This repository contains a **Retrieval-Augmented Generation (RAG)** system that answers questions about applying to **Master's programs in France**, in both **English and French**.  
 
-The assistant supports **English and French queries** and is grounded strictly on official academic documents, including:
-
-- Campus France "Études en France" guide  
-- Campus France Master's admission documentation  
-- Université Paris-Saclay AI Master's catalogue  
-- Grenoble AI4OneHealth Master's guide  
-- HEC MSc Data Science program brochure
-
-All answers are generated using a retrieval + grounding pipeline to minimize hallucinations and ensure factual accuracy.
+The system is evaluated as a small research project with public code, data, and a live demo.
 
 ---
 
-## 🔍 System Features
+## 🧠 Overview
 
-✅ Multilingual question answering (English & French)  
-✅ FAISS vector retrieval over official university PDFs  
-✅ Phi-3 LLM response synthesis  
-✅ Faithfulness + Recall@k benchmarking  
-✅ Fully reproducible evaluation pipeline  
+**Main features**
+
+- Multilingual questions: **English 🇬🇧 / French 🇫🇷**
+- RAG pipeline:
+  - Sentence embeddings: `sentence-transformers/paraphrase-multilingual-mpnet-base-v2`
+  - Vector DB: **FAISS**
+  - LLM: **Phi-3 Mini**
+- Grounded on real documents:
+  - Campus France guides
+  - Université Paris-Saclay AI Master's catalogue
+  - Grenoble AI4OneHealth guide
+  - HEC MSc Data Science for Business brochure
+- Evaluation:
+  - Faithfulness Accuracy
+  - Recall@1 / Recall@3 / Recall@5
+  - English vs French comparison
 
 ---
 
-## 📊 Evaluation Results
+## 🔗 Live Demo and Artifacts
 
-Benchmarking was conducted on bilingual admissions QA sets:
+- 🚀 **Hugging Face Space (Streamlit app)**  
+  https://huggingface.co/spaces/abdulmannaan1/ai-masters-advisor-france  
+
+- 💾 **Evaluation Dataset (questions + results)**  
+  https://www.kaggle.com/datasets/abdulmannaan12/french-masters-rag-eval  
+
+- 📊 **Evaluation Notebook (metrics + plots)**  
+  https://www.kaggle.com/code/abdulmannaan12/multilingual-rag-evaluation-for-french-admissions  
+
+---
+
+## 📂 Project Structure
+
+```
+french-masters-rag-advisor/
+├─ data/
+├─ index/
+│  ├─ faiss_index.bin
+│  └─ metadata.jsonl
+├─ src/
+│  ├─ preprocess.py
+│  ├─ build_index.py
+│  ├─ rag_pipeline.py
+│  └─ app_streamlit.py
+├─ eval/
+│  ├─ questions.jsonl
+│  ├─ questions_fr.jsonl
+│  ├─ run_faithfulness_eval.py
+│  └─ results_*.jsonl
+├─ requirements.txt
+├─ Dockerfile
+└─ paper.tex
+```
+
+---
+
+## 🛠 Local Setup
+
+```bash
+git clone https://github.com/abdulmannaan502/french-masters-rag-advisor.git
+cd french-masters-rag-advisor
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+---
+
+## 🔧 Building the Index
+
+```bash
+python src/preprocess.py
+python src/build_index.py
+```
+
+---
+
+## 💬 CLI Question Answering
+
+```bash
+python src/rag_pipeline.py
+```
+
+---
+
+## 🌐 Streamlit App
+
+```bash
+streamlit run src/app_streamlit.py
+```
+
+---
+
+## 📊 Evaluation
+
+```bash
+python eval/run_faithfulness_eval.py
+```
+
+**Key metrics:**
 
 | Language | Faithfulness | Recall@1 | Recall@3 | Recall@5 |
-|----------|----------------|-----------|-----------|-----------|
-| English  | **90%** | **50%** | **90%** | **90%** |
-| French   | **90%** | **70%** | **90%** | **90%** |
-
-The results demonstrate strong cross-lingual grounding performance with higher top-rank retrieval precision observed for French queries.
+|----------|--------------:|----------:|----------:|----------:|
+| English  | 90%           | 50%       | 90%       | 90%       |
+| French   | 90%           | 70%       | 90%       | 90%       |
 
 ---
 
-## 🔗 Project Links
+## 🧪 Research Paper
 
-- ✅ Source code & experiments:  
-  https://github.com/abdulmannaan502/french-masters-rag-advisor  
-
-- ✅ Reproducible evaluation notebook (Kaggle):  
-  *(Link will be added after notebook publication)*
+See `paper.tex` for the submission-ready LaTeX paper.
 
 ---
 
-## ⚙️ Architecture Overview
+## ⚖️ License
 
-**Pipeline Flow:**
-
-PDF documents → Chunking → Embedding → FAISS Vector Search →  
-Top-K Grounded Context → Phi-3 Generation → Verified Answer
-
-All outputs are constrained to retrieved document context to maintain factual reliability.
+MIT License.
 
 ---
 
-## 🎯 Use Case
+## 🙌 Acknowledgements
 
-This assistant is intended as:
-
-- A proof-of-concept admissions advisor chatbot  
-- A research artifact for multilingual NLP evaluation  
-- A portfolio system for graduate AI program applications
-
----
-
-## 📄 Research
-
-A technical evaluation of this system is documented in a short research preprint:
-
-**_“Multilingual Evaluation of a Retrieval-Augmented Generation System for Admissions Question Answering”_**
-
-*(arXiv submission pending)*
-
----
-
-## 🛠 Maintenance
-
-This project is actively maintained and expanded for:
-
-- Larger bilingual datasets  
-- Retrieval reranking experiments  
-- Response faithfulness auditing
-
+Campus France, French universities, Sentence-Transformers, FAISS, Hugging Face, Streamlit, and Phi-3 Mini.
