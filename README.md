@@ -1,21 +1,3 @@
----
-title: AI Masters Advisor France
-emoji: 🎓
-colorFrom: red
-colorTo: blue
-sdk: docker
-app_port: 8501
-tags:
-- streamlit
-- rag
-- nlp
-- llm
-- multilingual
-pinned: true
-short_description: Multilingual RAG system for French Master's admissions QA
-license: mit
----
-
 # 🎓 AI Masters Advisor – France
 
 This Space hosts a **Retrieval-Augmented Generation (RAG) system** designed to answer student questions about applying to **Master’s programs in France**.
